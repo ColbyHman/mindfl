@@ -1,0 +1,19 @@
+{
+  "name": "mindfl",
+  "version": "1.0.0",
+  "description": "Mindfl",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColbyHman/mindfl.git"
+  },
+  "author": "Colby Hillman",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ColbyHman/mindfl/issues"
+  },
+  "homepage": "https://github.com/ColbyHman/mindfl#readme"
+}
