@@ -15,5 +15,19 @@
   "bugs": {
     "url": "https://github.com/ColbyHman/mindfl/issues"
   },
-  "homepage": "https://github.com/ColbyHman/mindfl#readme"
+  "homepage": "https://github.com/ColbyHman/mindfl#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "graceful-fs": "^4.2.11",
+    "mongoose": "^7.3.4",
+    "serverless": "^3.33.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^12.0.4"
+  },
+  "imports": {
+    "#data/*": "./data/*"
+  },
+  "type": "module"
 }

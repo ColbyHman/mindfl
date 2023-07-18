@@ -23,8 +23,13 @@ provider:
   runtime: nodejs18.x
   region: us-east-1
   stage: dev
+  environment:
+    mongo_url: localhost/mindfl
+    mongo_user: api_user
+    mongo_pw: TqT#!3d5!p7v2d3#T#jz@iq8
 
-
+plugins:
+  - serverless-offline
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
@@ -60,15 +65,66 @@ functions:
   register:
     handler: api/mindfl.register
     memorySize: 128
+    timeout: 8
     description: Registers a new user to Mindfl.
     events:
       - http:
           path: register
           method: post
-
+  # login:
+  #   handler: api/mindfl.login
+  #   memorySize: 128
+  #   description: Authenticates a user to Mindfl.
+  #   events:
+  #     - http:
+  #         path: login
+  #         method: post
+  create_entry:
+    handler: api/mindfl.create_entry
+    memorySize: 128
+    timeout: 8
+    description: Creates an entry into a Mindfl user's journal
+    events:
+      - http:
+          path: create_entry
+          method: post
+  modify_entry:
+    handler: api/mindfl.modify_entry
+    memorySize: 128
+    timeout: 8
+    description: Modifies an entry in a Mindfl user's journal
+    events:
+      - http:
+          path: modify_entry
+          method: post
+  list_entries:
+    handler: api/mindfl.list_entries
+    memorySize: 128
+    timeout: 8
+    description: Lists all entries in a Mindfl user's journal
+    events:
+      - http:
+          path: list_entries
+          method: post
+  delete_entry:
+    handler: api/mindfl.delete_entry
+    memorySize: 128
+    timeout: 8
+    description: Deletes an entry from a Mindfl user's journal
+    events:
+      - http:
+          path: delete_entry
+          method: post
+  delete_journal:
+    handler: api/mindfl.delete_journal
+    memorySize: 128
+    timeout: 8
+    description: Removes a Mindfl user's journal from the database
+    events:
+      - http:
+          path: delete_journal
+          method: post
 #    Define function environment variables here
-#    environment:
-#      variable2: value2
 
 # you can add CloudFormation resource templates here
 #resources:
