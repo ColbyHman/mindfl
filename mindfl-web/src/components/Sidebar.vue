@@ -12,7 +12,7 @@
                 <span class="material-icons">library_books</span>
                 <span class="text">Dashboard</span>
             </router-link>
-            <router-link class="button" to="/">
+            <router-link class="button" to="/create">
                 <span class="material-icons">add_circle</span>
                 <span class="text">New Entry</span>
             </router-link>
